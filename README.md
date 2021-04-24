@@ -354,6 +354,26 @@ public class Person {
 
 ### **Constants**
 ```java
+// static final creates a Constant
+// Constants can be used to differentiate between different states with if/else or switch-case
+public class Person {
+    public static final int STUDENT = 0;
+    public static final int GRADUATE = 1;
+
+    public Person (int person_type, String prename, String surname, int age, int student_id, int gpa) {
+        this.person_type = person_type;
+        this.prename = prename;
+        this.surname = surname;
+
+        if (person_type == STUDENT) {       // same as person_type == 0
+            this.student_id = student_id;
+        }
+        if (person_type == GRADUATE) {      // same as person_type == 1
+            this.gpa = gpa;
+        }
+    }
+}
+
 
 ```
 

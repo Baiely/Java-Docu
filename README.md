@@ -249,6 +249,7 @@ Person p2 = new Person("Frank", "Schmitt", 8) // Constructor with the correspond
 
 ## Methods
 ```java
+// <modifier> <Datatype or void for no return> <method_name>
 public class Person {
 
     public String prename;

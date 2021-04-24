@@ -378,14 +378,26 @@ public class Person {
 // to access Class Methods: classname.static_method_name(parameters)
 ```
 
+# Inheritance
+
+
 
 # Modifier
 ```java
-public
-friendly
-protected
-private
+public class Person {
+    
+    public String prename;
+    protected String hair_color;
+    String surname;                     // friendly
+    private int age;
+}
 ```
+| visibility\modifier                          | public | protected | friendly | private |
+|----------------------------------------------|--------|-----------|----------|---------|
+| own Class A                                  | Yes    | Yes       | Yes      | Yes     |
+| Class B same package                         | Yes    | Yes       | Yes      | No      |
+| Subclass to A different package              | Yes    | Yes       | No       | No      |
+| Class B different package & no Subclass to A | Yes    | No        | No       | No      |
 
 # Math
 

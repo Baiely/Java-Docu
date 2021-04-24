@@ -4,7 +4,7 @@ My own personal collection of Java Code. Good to knows and more.
 <br>
 
 4 Pillars of Object oriented programming: <br>
-1. Encapsulation - Keyword: modifiers (protected/private) - Visibility > of Data as low as needed <br>
+1. Encapsulation - Keyword: modifiers (protected/private) - Visibility of Data as low as needed <br>
 2. Inheritance - Keyword: extends - Specialising smaller subgroups <br>
 3. Abstraction - Keyword: abstract - shared properties but no actual Instance <br>
 4. Polymorphism - Keyword: / - Different Things appear same outwards however are different internally <br>

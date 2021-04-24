@@ -568,6 +568,181 @@ cp1.calculate();                // "A implements Control_Panel's method ..."
 cp2.calculate_complex(10);      // 20
 ```
 
+# String
+
+## String Initialization & Declaration
+```java
+String s = "Hello World";
+String s = new String();                // s = ""
+String s = new String("Hello World")
+String s;                               // String variable not initialized
+s = "";
+s = null;                               // String variable not initialized
+```
+
+## Comparisons
+
+### **Comparisons Equality**
+```java
+String s = "Hello";
+String t = "Hello";
+
+s == t;         // return false - testing for same Object Identity
+s.equals(t);    // return true - testing for same Value
+```
+
+### **Comparisons Inequality**
+```java
+String s = "Hello";
+String t = "Hello";
+
+!s.equals(t);   // return false
+```
+
+### **Comparisons non-case-sensitive**
+```java
+String s = "Hello";
+String t = "HELLO";
+
+s.equals(t);            // return false
+s.equalsIgnoreCase(t);  // return true
+```
+
+### **Comparisons contain Strings**
+```java
+// case-sensitive
+String s = "Hello";
+
+s.startsWith("He");     // return true
+s.endsWith("lo");       // return true
+s.contains("l");        // return true
+```
+
+### **Comparisons lexically**
+```java
+String s = "Hello";
+String t = "Hi";
+
+// case-sensitive
+s.compareTo(t);     // return -4
+
+// non-case-sensitive
+s.compareToIgnoreCase(t);
+
+// cases
+// return value < 0     => s is lexically speaking ahead of t
+// return value > 0     => s is lexically speaking behind of t
+// return value == 0    => s and t are identical
+```
+
+## Conversion
+
+### **Convert Strings to other Datatypes (Wrapper.parseDT)**
+```java
+String s = "true";
+Boolean.parseBoolean(s);    // return true
+Byte.parseByte();
+Short.parseShort();
+Integer.parseInt();
+Long.parseLong();
+Float.parseFloat();
+Double.parseDouble();
+```
+
+### **Convert Datatypes to Strings (String.valueOf(DT))**
+```java
+int i = 17;
+String s = String.valueOf(i);   // s = "17"
+```
+
+## Concatenation
+```java
+// Implicit Datatype Conversion for primitive Datatypes when concatenated with +
+int i = 30;
+
+System.out.println("Happy " + i + "th Birthday!")
+```
+
+## Substrings
+```java
+String s = "Hello there";
+// start until end of String
+s.substring(6);             // return "there"
+
+// start, stop (exclusive)
+s.substring(0,5);           // return "Hello"
+```
+
+## String Length
+```java
+String s = "Hello there.";
+s.length()              // return 12
+```
+
+## Indexing for Strings
+```java
+// first appearance within the String
+String s = "Hello";
+s.indexOf("l");         // return 2
+
+// searching for a Index of a String in reverse
+s.lastIndexOf("l");     // return 3
+```
+
+## String Shaping
+
+### Convert Case
+```java
+String s = "Hello";
+s.toLowerCase();        // return "hello"
+s.toUpperCase();        // return "HELLO"
+```
+
+### Deleting Whitespaces & Replacing
+```java
+String s = " Hello ";
+s.trim();               // removes trailing whitespaces at the Start & End
+
+s.replace("ll", "yy")   // <String to be replaced>, <String replacing old one>
+```
+
+# StringBuffer (Dynamic String extension)
+
+## Constructor
+```java
+// Default 16 Characters
+Stringbuffer b1 = new StringBuffer();
+// Length of the provided String
+Stringbuffer b2 = new StringBuffer("Hello World");
+// Define length - great if length is clear
+Stringbuffer b3 = new StringBuffer(1000);
+```
+
+## Add Strings
+```java
+Stringbuffer sb = new StringBuffer("Hello");
+// add String at the end
+sb.append(" John");         // sb = "Hello John"
+
+// add String at provided Index
+sb.insert(5, " Mister");    // sb = "Hello Mister John"
+```
+
+## Remove Strings
+```java
+StringBuffer sb = new StringBuffer("Hello there");
+sb.deleteCharAt(5);     // sb = "Hellothere"
+
+// <start>,<stop exclusive>
+sb.delete(5,10);         // sb = "Hello"
+```
+
+## toString
+```java
+StringBuffer sb = new StringBuffer("Hello World");
+String s = sb.toString();           // s = "Hello World"
+```
+
 # Math
 
 ## random

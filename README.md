@@ -1,6 +1,14 @@
 # Java-Docu
 My own personal collection of Java Code. Good to knows and more.
 
+<p>
+4 Pillars of Object oriented programming: <br>
+1. Encapsulation - Keyword: modifiers (protected/private) - Visibility of Data as low as needed <br>
+2. Inheritance - Keyword: extends - Specialising smaller subgroups <br>
+3. Abstraction - Keyword: abstract - shared properties but no actual Instance <br>
+4. Polymorphism - Keyword: / - Different Things appear same outwards however are different internally <br>
+</p>
+
 # General
 
 ## Print
@@ -404,6 +412,26 @@ public class Person {
 // to access Class Methods: classname.static_method_name(parameters)
 ```
 
+# Encapsulation
+s
+## Modifier
+```java
+public class Person {
+    
+    public String prename;
+    protected String hair_color;
+    String surname;                     // friendly
+    private int age;
+}
+```
+| visibility\modifier                          | public | protected | friendly | private |
+|----------------------------------------------|--------|-----------|----------|---------|
+| own Class A                                  | Yes    | Yes       | Yes      | Yes     |
+| Class B same package                         | Yes    | Yes       | Yes      | No      |
+| Subclass to A different package              | Yes    | Yes       | No       | No      |
+| Class B different package & no Subclass to A | Yes    | No        | No       | No      |
+
+
 # Inheritance
 
 <p> 
@@ -539,23 +567,6 @@ Control_Panel cp2 = new B();
 cp1.calculate();                // "A implements Control_Panel's method ..."
 cp2.calculate_complex(10);      // 20
 ```
-
-# Modifier
-```java
-public class Person {
-    
-    public String prename;
-    protected String hair_color;
-    String surname;                     // friendly
-    private int age;
-}
-```
-| visibility\modifier                          | public | protected | friendly | private |
-|----------------------------------------------|--------|-----------|----------|---------|
-| own Class A                                  | Yes    | Yes       | Yes      | Yes     |
-| Class B same package                         | Yes    | Yes       | Yes      | No      |
-| Subclass to A different package              | Yes    | Yes       | No       | No      |
-| Class B different package & no Subclass to A | Yes    | No        | No       | No      |
 
 # Math
 

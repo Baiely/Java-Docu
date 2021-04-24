@@ -40,7 +40,7 @@ int p = ++n; // p = 19; n = 19 first n+1 then initialization
 byte // 8 Bit -128 to 127
 short // 16 Bit -32.768 to 32.767
 int // 32 Bit -2.147.483.648 to 2.147.483.647
-long // 64 Bit
+long l = 13131564l;// 64 Bit
 
 // Decimals
 float f = 11.3f; // 32 Bit
@@ -52,6 +52,24 @@ boolean bf = false;
 
 // Characters
 char c = 'c'; // only for single Characters
+```
+
+## Arrays
+```java
+// Declaration: <Type>[] variable
+long[] zahlen;
+
+// Declaration + Initialization: <Type>[] <variable> = new <Type>[<Array_length>]
+long[] zahlen = new long[10];
+
+// Arrays can also have Classes as Types. An Array contains only Elements of the same Type.
+```
+
+### **Array Indexing**
+```java
+long[] zahlen = new long[10];
+zahlen[3] = 12l; // Assigning 12 to Index 3 (4th Position in the Array)
+System.out.println(zahlen[3]); // Accessing Elements by [Index]
 ```
 
 ## Comparisons

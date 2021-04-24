@@ -352,6 +352,11 @@ public class Person {
 // to access Class Attributes: classname.static_attribute_name
 ```
 
+### **Constants**
+```java
+
+```
+
 ### **Methods**
 ```java
 // Static Methods are available once for the Class, not every Object
@@ -377,6 +382,9 @@ public class Person {
 }
 // to access Class Methods: classname.static_method_name(parameters)
 ```
+
+# Abstract Classes
+
 
 # Inheritance
 
@@ -410,6 +418,29 @@ public String toString() {
 ```
 
 # Polymorphism
+
+## Arrays and Classes
+```java
+// Arrays with multiple Subclasses can be realized if an Array of the Superclass is created
+Person[] people = new Person[10];
+String prename = "John";
+String surname = "Smith";
+int age = 20;
+int student_id = 516540;
+people[0] = new Person(prename, surname, age);
+people[1] = new Student(prename, surname, age, student_id);
+```
+
+### **Accessing Subclass Objects in a Superclass Array - instanceof**
+```java
+// instanceof tests if something is an Object of the provided Subclass (or Subclasses of the provided Subclass)
+if (people[1] instanceof Student) {
+    // cast only works if the Object is an instance of the Subclass
+    Student s = (Student) people[1];
+    System.out.println(s.getStudent_ID);
+}
+// Objects in the Array can be accessed as their resoective Class, however not edited
+```
 
 
 # Modifier

@@ -247,13 +247,6 @@ Person p1 = new Person(); // empty Constructor is called
 Person p2 = new Person("Frank", "Schmitt", 8) // Constructor with the corresponding Attribute count (+ Datatype matches) is called
 ```
 
-## Using a Method
-```java
-import package_name.Person;
-Person p = new Person("Frank", "Schmitt", 8);
-Sytsem.out.println(p.getName());
-```
-
 ## Methods
 ```java
 public class Person {
@@ -328,9 +321,16 @@ public class Person {
 }
 ```
 
+### **Using a Method**
+```java
+import package_name.Person;
+Person p = new Person("Frank", "Schmitt", 8);
+Sytsem.out.println(p.getName());
+```
+
 ## Static
 
-## **Attributes**
+### **Attributes**
 ```java
 // Static Attributes count for the Class as a whole, so they are only accessible once instead of per Object
 public class Person {
@@ -352,8 +352,7 @@ public class Person {
 // to access Class Attributes: classname.static_attribute_name
 ```
 
-## **Methods**
-```java
+### **Methods**
 ```java
 // Static Methods are available once for the Class, not every Object
 public class Person {

@@ -380,6 +380,36 @@ public class Person {
 
 # Inheritance
 
+## Constructor
+```java
+// <Subclass> extends <Superclass>
+// all Methods + Attributes are inherited from the Superclass as long as the modifier matches the required access for that
+// In the case of private Attributes they can still be accessed with Getter/Setter Methods if they have the required modifier for the visibility
+public class Student extends Person {
+
+    protected int student_id; // additional Student Attribute (Person Attributes are inherited)
+
+    public Student (String prename, String surname, int age, int student_id) {
+        super(prename, surname, age); // call Superclass Constructor
+        this.student_id = student_id; // additional Attributes exclusive to Subclass need to be declared seperately
+    }
+}
+// Constructors are never inherited
+// If you call a Super-Constructor in a Block it has to be in the first line
+// You can only call the Super-Constructor once in the Sub-Constructor
+```
+
+## Overwriting Methods
+```java
+// Subclasses can overwrite Methods inherited from Superclasses
+// While they can be overwritten, the Superclass' Method can still be called and used to add something to the existing Method without redundant Code
+@Override
+public String toString() {
+    return super.toString() + " student_id=" + this.student_id + "}"; 
+}
+```
+
+# Polymorphism
 
 
 # Modifier

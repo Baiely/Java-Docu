@@ -32,6 +32,7 @@ int count = 5;
 int n = 17;
 int o = n++; // o = 17; n = 18 first initialization then n+1
 int p = ++n; // p = 19; n = 19 first n+1 then initialization
+p += 3; // p = p + 3
 ```
 
 ## primitive Datatypes
@@ -52,6 +53,14 @@ boolean bf = false;
 
 // Characters
 char c = 'c'; // only for single Characters
+```
+
+### **Type Casting**
+```java
+// (<Type>) to cast to a Datatype or even Class
+float f = 12.5f;
+int i = (int) f; // i = 12
+// casting to int from floats/doubles just deletes the decimal places - no roundign of values
 ```
 
 ## Arrays
@@ -125,6 +134,29 @@ if (i < 5) {
 }
 
 // () can also contain multiple conditions => ((i > 5) && (b == 6))
+```
+
+## Switch-Case
+```java
+// same as if, else if and else Conditions
+Scanner sc = new Scanner(System.in);
+System.out.println("How are you");
+String input = sc.nextLine();
+sc.close();
+
+switch (input) {
+    case "good":
+        System.out.println("That's great!");
+        break; // if break is not implemented it will test the other cases as well
+    case "bad":
+        System.out.println("Oh that's not good. Have you tried eating some ice cream?");
+    // multiple case assignment to one block
+    case "okay":
+    case "not bad":
+        System.out.println("Have a great day!");
+    default:
+        System.out.println("Good to know.");
+}
 ```
 
 ## Loops
@@ -356,20 +388,24 @@ protected
 private
 ```
 
+# Math
 
-### **Tuple Return**
+## random
+```java
+// Math.random() returns a value x -> 0<=x<1
+// Math.random() * <multiple of 10 according to decimals required> + <minimum value>
+int i;
+i = (int) (Math.random() * 10 + 1)
+```
+
+# Package
+
+## Class1
 ```java
 
 ```
 
-# Modules
-
-## Module 1
-```java
-
-```
-
-### **Module 1 Functionality 1**
+### **Class1 Functionality 1**
 ```java
 
 ```

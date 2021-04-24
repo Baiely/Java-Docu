@@ -56,7 +56,7 @@ char c = 'c'; // only for single Characters
 
 ## Comparisons
 
-### Equality
+### **Equality**
 ```java
 // between primitive Datatypes
 int i = 6;
@@ -71,7 +71,7 @@ s1.equals(s2); // return true
 // Tip: If one of the two could be null, put it last, thus avoiding a null pointer exception
 ```
 
-### Greater, Smaller, Not 
+### **Greater, Smaller, Not**
 ```java
 // greater than or equal
 >=
@@ -83,7 +83,7 @@ s1.equals(s2); // return true
 !=
 ```
 
-### Logical Comparisons
+### **Logical Comparisons**
 ```java
 int i = 5;
 boolean b = true;
@@ -131,7 +131,7 @@ do {
 // returns 0, then breaks
 ```
 
-### Break
+### **Break**
 ```java
 int i = 0;
 while (i < 7) {
@@ -143,6 +143,199 @@ while (i < 7) {
 }
 // return 0, 1, 2
 // breaks out of most inner loop, also applicable to switch-case
+```
+
+# Classes
+```java
+public class Person {
+
+    public String prename;
+    public String surname;
+    private int calls = 0;
+
+    public String getName() {
+        String name = prename + " " + surname;
+        raiseCalls()
+        return name;
+    }
+
+    private void raiseCalls() {
+        calls++;
+    }
+}
+```
+
+## Constructor
+```java
+// address Object attributes with "this.", to differentiate between passed parameters
+public class Person {
+
+    public String prename; // Declaration
+    public String surname;
+    private int calls = 0; // Initialization to standard value
+
+    // empty Constructor, overrides Default Construcotr
+    public Person () {
+        this.prename = "John";
+        this.surname = "Smith";
+        this.calls = 0;
+    }
+
+    // Constructor with Parameters
+    public Person (String prename, String surname, int calls) {
+        this.prename = prename;
+        this.surname = surname;
+        this.calls = calls;
+    }
+}
+```
+
+## Creating an Object
+```java
+import package_name.Person;
+Person p1 = new Person(); // empty Constructor is called
+Person p2 = new Person("Frank", "Schmitt", 8) // Constructor with the corresponding Attribute count (+ Datatype matches) is called
+```
+
+## Using a Method
+```java
+import package_name.Person;
+Person p = new Person("Frank", "Schmitt", 8);
+Sytsem.out.println(p.getName());
+```
+
+## Methods
+```java
+public class Person {
+
+    public String prename;
+    public String surname;
+    private int calls = 0;
+
+    public Person (String prename, String surname, int calls) {
+        this.prename = prename;
+        this.surname = surname;
+        this.calls = calls;
+    }
+
+    // Method with no return value
+    public void raiseCalls () {
+        this.calls++;
+    }
+}
+```
+
+### **Getter/Setter**
+```java
+// central way of assigning / changing attributes of an Object
+public class Person {
+
+    public String prename;
+    public String surname;
+    private int calls = 0;
+
+    public Person (String prename, String surname, int calls) {
+        this.prename = prename;
+        this.surname = surname;
+        this.calls = calls;
+    }
+
+    // obtain current object's surname
+    public String getSurname () {
+        return this.surname;
+    }
+
+    // set current object's surname
+    public void setSurname (String surname) {
+        this.surname = surname;
+    }
+}
+```
+
+### **to-String**
+```java
+public class Person {
+
+    public String prename;
+    public String surname;
+    private int calls = 0;
+
+    public Person (String prename, String surname, int calls) {
+        this.prename = prename;
+        this.surname = surname;
+        this.calls = calls;
+    }
+
+    @Override // Tag to overwrite the Default to String Method
+    public String toString() {
+        return "Person{" +
+                "prename='" + this.prename + '\'' +
+                ", surname='" + this.surname + '\'' +
+                ", calls=" + this.calls +
+                '}';
+    }
+
+}
+```
+
+## Static
+
+## **Attributes**
+```java
+// Static Attributes count for the Class as a whole, so they are only accessible once instead of per Object
+public class Person {
+
+    // static indicates a Class Attribute
+    public static int persons_created = 0;
+    public String prename;
+    public String surname;
+    private int calls = 0;
+
+    public Person (String prename, String surname, int calls) {
+        this.prename = prename;
+        this.surname = surname;
+        this.calls = calls;
+        Person.persons_created++; 
+    }
+
+}
+// to access Class Attributes: classname.static_attribute_name
+```
+
+## **Methods**
+```java
+```java
+// Static Methods are available once for the Class, not every Object
+public class Person {
+
+    public static int persons_created = 0;
+    public String prename;
+    public String surname;
+    private int calls = 0;
+
+    public Person (String prename, String surname, int calls) {
+        this.prename = prename;
+        this.surname = surname;
+        this.calls = calls;
+        Person.persons_created++;
+    }
+
+    // static indicates a Class Method
+    public static int getPersonsCreated () {
+        return Person.persons_created;
+    }
+
+}
+// to access Class Methods: classname.static_method_name(parameters)
+```
+
+
+# Modifier
+```java
+public
+friendly
+protected
+private
 ```
 
 

@@ -493,6 +493,52 @@ if (people[1] instanceof Student) {
 // Objects in the Array can be accessed as their resoective Class, however not edited
 ```
 
+# Interfaces
+```java
+// Use case: Two different Classes which aren't related to each other
+// and Inheritance from a Superclass wouldn't make sense
+// can use an Interface to implement Methods fit for the requirements
+// but the Functionality can be assumed through the Interface
+public interface Control_Panel {
+    public void calculate();
+    public void calculate_complex(int n);
+}
+```
+
+```java
+public class A implements Control_Panel {
+    // ...
+
+    public void calculate() {
+        System.out.println("A implements Control_Panel's method calculate().");
+    }
+    public void calculate_complex (int n) {
+        System.out.println(n + 1);
+    }
+}
+```
+
+```java
+public class B implements Control_Panel {
+    // ...
+
+    public void calculate() {
+        System.out.println("B implements Control_Panel's method calculate() better than A.");
+    }
+    public void calculate_complex (int n) {
+        System.out.println(n + 10);
+    }
+}
+```
+
+## Using Interfaces
+```java
+Control_Panel cp1 = new A();
+Control_Panel cp2 = new B();
+
+cp1.calculate();                // "A implements Control_Panel's method ..."
+cp2.calculate_complex(10);      // 20
+```
 
 # Modifier
 ```java

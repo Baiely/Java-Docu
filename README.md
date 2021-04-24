@@ -404,10 +404,13 @@ public class Person {
 // to access Class Methods: classname.static_method_name(parameters)
 ```
 
-# Abstract Classes
-
-
 # Inheritance
+
+<p> 
+extends - Subclass extends Superclass - Inherit Class Attributes & Methods <br>
+final - public final class - can't act as a Superclass, Inheritance disabled <br>
+protected - Modifier to enable Subclasses accessing Superclass values <br>
+</p>
 
 ## Constructor
 ```java
@@ -435,6 +438,33 @@ public class Student extends Person {
 @Override
 public String toString() {
     return super.toString() + " student_id=" + this.student_id + "}"; 
+}
+```
+
+# Abstraction
+
+## Abstract Classes
+```java
+// Use case: Summarize shared properties
+// No Objects can be created
+public abstract class Person {}
+```
+
+## Abstract Methods
+```java
+// Define that Subclasses need to implement a Method, Superclass only defines signature
+public abstract class Person {
+
+    public abstract String say_hello (String name);
+}
+
+public class Student extends Person {
+    // ...
+
+    // required Implementation
+    public String say_hello (String name) {
+        System.out.println("Howdy " + name + ", how are ya?")
+    }
 }
 ```
 

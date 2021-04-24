@@ -413,7 +413,7 @@ public class Person {
 ```
 
 # Encapsulation
-s
+
 ## Modifier
 ```java
 public class Person {

@@ -822,6 +822,138 @@ try {
 }
 ```
 
+# Exceptions
+
+> **Throwable** is the **Superclass** to all *Exceptions* and *Errors*. <br>
+> **Error** is a Subclass of Throwable. Critical failures which **shouldn't be caught** (eg. OutOfMemoryError, StackOverFlowError). <br>
+> **Exception** is a Subclass of Throwable. Failures which **should be caught**. <br>
+> **RuntimeException** is a Subclass of Exception (eg. NullPointerException). Don't have to be caught. [unchecked exceptions] <br>
+> Other Exceptions have to be caught. [checked exceptions] 2 Options:<br>
+> try-catch or throws.
+
+```java
+Exception.toString();           // Exception Description
+Exception.getMessage();         // Failure Message
+Exception.printStackTrace();    // prints calling history
+```
+
+## try-catch
+```java
+try {
+    // Input by user
+    String s = JOptionPane.showInputDialog("Enter a number");
+    int i = Integer.parseInt(s);
+    System.out.println(2 * i);
+} catch (java.lang.NumberFormatException e) {       // first case
+    e.printStackTrace();
+} catch (Exception e) {                             // second case
+    System.out.println("An Exception occured");
+} finally {
+    // always executed
+}
+```
+
+## throws
+```java
+// throws are not inherited and need to be specified for each Method (including Constructors) that could have the Exception
+
+public static void main(String[] args) {
+    String datum = javax.swing.JOptionPane.showInputDialog("Date:");
+    try {
+        if (datumLiegtInDerZukunft(date))
+            System.out.println("The date is in the future.");
+        else
+            System.out.println("The date is not in the future.");
+    } catch (ParseException e) {
+        System.out.println("Invalid date.");
+    }
+}
+
+// throws passes the Exception to the Caller-Method where the Exception has to be handled 
+public static boolean dateInFuture(String s) throws ParseException {
+    SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+    Date d = sdf.parse(s);
+    return d.after(new Date());
+}
+```
+
+## throw
+```java
+// throw the Error in the corresponding block
+
+int time;
+// ...
+
+if (time < 0) {
+    throw new IllegalArgumentException("There is no negative time.")
+}
+```
+
+## own Exception Classes
+```java
+public class My_Exception extends Exception () {
+    public My_Exception() {
+        super();
+    }
+
+    public My_Exception(String exception) {
+        super(exception);
+    }
+}
+```
+
+### **Implementing own Exception Classes**
+```java
+throw new My_Exception("This is my own Exception");
+
+try {
+    // ...
+} catch (My_Exception e) {
+    System.out.println(e.getMessage());
+}
+```
+
+### **Expansion for Implementation of own Exception Classes (IDs)**
+```java
+class My_Exception extends Exception {
+    public int exceptionID;
+
+    public My_Exception() {
+        super();
+    }
+
+    public My_Exception(String fehler, int exceptionID) {
+        super(fehler);
+        setexceptionID(exceptionID);
+    }
+
+    protected void setExceptionID(int exceptionID) {
+        this.exceptionID = exceptionID;
+    }
+
+    public int getExceptionID() {
+        return this.exceptionID;
+    }
+
+    public String getExceptionMessage() {
+        return getExceptionID() + " " + getMessage();
+    }
+}
+```
+
+```java
+try {
+    boolean exception_condition;
+    // ...
+    if (exception_condition) {
+        throw new My_Exception("New Exception", 17);
+    }
+    // ...
+} catch (My_Exception e) {
+    System.out.println(e.getExceptionMessage() );
+}
+```
+
 # Math
 
 ## random

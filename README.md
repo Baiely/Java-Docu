@@ -693,9 +693,13 @@ s.lastIndexOf("l");     // return 3
 
 ### Convert Case
 ```java
+// creates a copy
 String s = "Hello";
-s.toLowerCase();        // return "hello"
-s.toUpperCase();        // return "HELLO"
+s.toLowerCase();        // return "hello"   however s = "Hello"
+s.toUpperCase();        // return "HELLO"   however s = "Hello"
+
+// if current String should be changed it needs to be reassigned
+s = s.toLowerCase();    // s = "hello"
 ```
 
 ### Deleting Whitespaces & Replacing
@@ -767,8 +771,56 @@ while (st.hasMoreTokens()) {                        // Iteration for each Part
 # Files
 
 ## Reading Files
+```java
+import java.io.BufferedReader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.Files;
+
+try {
+    Path my_file = Paths.get("cwd/path/to/file.txt");
+
+    // Create File if it doesn't exist yet
+    if (!Files.exists(my_file)) {
+        Files.createFile(my_file);
+    }
+
+    // Reading
+    BufferedReader my_reader = Files.newBufferedReader(my_file);
+    
+    String current_line = my_reader.readLine();     // reading first line
+
+    while (current_line != null) {                  // readLine() returns null ath the end of a file
+        System.out.println(current_line);
+        current_line = my_reader.readLine();        // reading following lines
+    }
+
+    my_reader.close();                              // required to prevent passive system resource occupation
+
+} except (Exception e) {
+    e.printStackTrace();
+}
+```
 
 ## Writing to Files
+```java
+import java.io.BufferedWriter;
+import java.nio.file.*;
+
+try {
+    Path my_file = Paths.get("cwd/path/to/file.txt");
+
+    // Writing
+    BufferedWriter my_writer = Files.newBufferedWriter(my_file, StandardOpenOption.APPEND);
+    my_writer.write("This is written in the last line of the File.");
+    my_writer.write("\nThis is extends the file by one line and writes this String in the new last line.");
+
+    my_writer.close();          // required to prevent passive system resource occupation
+
+} catch (Exception e) {
+    e.printStackTrace();
+}
+```
 
 # Math
 

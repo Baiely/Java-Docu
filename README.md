@@ -743,6 +743,33 @@ StringBuffer sb = new StringBuffer("Hello World");
 String s = sb.toString();           // s = "Hello World"
 ```
 
+# StringTokenizer (Splitting Strings)
+
+## Usage
+```java
+// <String to be split up>, <Deliminator>
+String s = "Germany, Swiss, Austria";
+StringTokenizer st = new StringTokenizer(s, ",");
+while (st.hasMoreTokens()) {                        // Iteration for each Part
+    System.out.println(st.nextToken());             // obtain single Part
+}
+```
+
+## Layout Deliminators
+```java
+" ";    // Whitespace (Default)
+"\t";   // Tab
+"\n";   // New Line
+"\r";   // Carriage Return (Same Line)
+"\f";   // Formfeed (Indicates Page Break)
+```
+
+# Files
+
+## Reading Files
+
+## Writing to Files
+
 # Math
 
 ## random
